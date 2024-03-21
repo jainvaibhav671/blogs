@@ -6,6 +6,7 @@ import { buttonVariants } from "./ui/button";
 import { Github, Twitter } from "lucide-react";
 import MainNav from "./MainNav";
 import MobileNav from "./MobileNav";
+import ToggleTheme from "./ToggleTheme";
 
 export default function Header() {
   return (
@@ -38,6 +39,7 @@ export default function Header() {
               </div>
             </Link>
           </nav>
+          <ToggleTheme />
           <MobileNav />
         </div>
       </div>
