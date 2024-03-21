@@ -1,5 +1,5 @@
 import { MakrdownComponent } from "@/components/MarkdownComponent";
-import { posts } from "@site/content";
+import { posts } from "../../../../.velite";
 import { notFound } from "next/navigation";
 import React from "react";
 

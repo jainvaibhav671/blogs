@@ -1,4 +1,4 @@
-import { Posts } from "@site/content";
+import { Posts } from "../../.velite";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 

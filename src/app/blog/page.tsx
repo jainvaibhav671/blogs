@@ -1,6 +1,6 @@
 import React from "react";
 
-import { posts } from "@site/content";
+import { posts } from "../../../.velite";
 import PostItem from "@/components/PostItem";
 import { sortPosts } from "@/lib/utils";
 
