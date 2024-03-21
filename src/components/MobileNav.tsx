@@ -20,7 +20,7 @@ export default function MobileNav() {
       </Sheet.SheetTrigger>
       <Sheet.SheetContent side="right">
         <MobileLink href="/" className="flex space-x-2 items-center">
-          <Gamepad />
+          <Gamepad className="text-black dark:text-white" />
           <span className="font-bold">{siteConfig.name}</span>
         </MobileLink>
         <div className="flex flex-col gap-3 mt-3">

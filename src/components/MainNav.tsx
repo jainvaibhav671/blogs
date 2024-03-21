@@ -13,7 +13,7 @@ export default function MainNav() {
   return (
     <nav className="flex items-center space-x-4 lg:space-x-6">
       <Link href="/" className="mr-6 flex items-center space-x-2">
-        <Gamepad color="black" />
+        <Gamepad className="text-black dark:text-white" />
         <span className="text-foreground font-bold">{siteConfig.name}</span>
       </Link>
       <Link

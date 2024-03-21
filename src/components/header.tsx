@@ -26,7 +26,7 @@ export default function Header() {
                   "flex gap-1 px-0",
                 )}
               >
-                <Github color="black" size={24} />
+                <Github className="text-black dark:text-white" size={24} />
               </div>
             </Link>
             <Link
@@ -35,7 +35,10 @@ export default function Header() {
               rel="noreferrer"
             >
               <div className={cn(buttonVariants({ variant: "ghost" }), "flex")}>
-                <Twitter color="blue" size={24} />
+                <Twitter
+                  className="text-blue-600 dark:text-blue-300"
+                  size={24}
+                />
               </div>
             </Link>
           </nav>
