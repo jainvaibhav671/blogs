@@ -5,6 +5,7 @@ import React from "react";
 import { buttonVariants } from "./ui/button";
 import { Github, Twitter } from "lucide-react";
 import MainNav from "./MainNav";
+import MobileNav from "./MobileNav";
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
       <div className="container flex h-14 max-w-screen-2xl items-center">
         <MainNav />
         <div className="flex flex-1 items-center justify-end space-x-2">
-          <nav className="flex">
+          <nav className="hidden sm:flex">
             <Link
               href={siteConfig.links.github}
               target="_blank"
@@ -21,7 +22,7 @@ export default function Header() {
               <div
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
-                  "flex gap-1",
+                  "flex gap-1 px-0",
                 )}
               >
                 <Github color="black" size={24} />
@@ -37,6 +38,7 @@ export default function Header() {
               </div>
             </Link>
           </nav>
+          <MobileNav />
         </div>
       </div>
     </header>

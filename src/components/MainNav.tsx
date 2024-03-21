@@ -21,6 +21,7 @@ export default function MainNav() {
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
           pathname === "/blog" ? "text-foreground" : "text-foreground/60",
+          "hidden sm:inline-block",
         )}
       >
         Blog
@@ -30,6 +31,7 @@ export default function MainNav() {
         className={cn(
           "text-sm font-medium transition-colors hover:text-primary",
           pathname === "/about" ? "text-foreground" : "text-foreground/60",
+          "hidden sm:inline-block",
         )}
       >
         About
