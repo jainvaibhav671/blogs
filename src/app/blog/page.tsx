@@ -3,9 +3,25 @@ import React from "react";
 import { posts } from "../../../.velite";
 import PostItem from "@/components/PostItem";
 import { sortPosts } from "@/lib/utils";
+import { QueryPagination } from "@/components/QueryPagination";
 
-export default async function BlogPage() {
-  const displayPosts = sortPosts(posts.filter((post) => post.published));
+const POSTS_PER_PAGE = 5;
+
+interface Props {
+  searchParams: {
+    page?: string;
+  };
+}
+
+export default async function BlogPage({ searchParams }: Props) {
+  const currentPage = Number(searchParams?.page) || 1;
+  const sortedPosts = sortPosts(posts.filter((post) => post.published));
+  const totalPages = Math.ceil(sortedPosts.length / POSTS_PER_PAGE);
+
+  const displayPosts = sortedPosts.slice(
+    POSTS_PER_PAGE * (currentPage - 1),
+    POSTS_PER_PAGE * currentPage
+  );
 
   return (
     <div className="container max-w-4xl py-6 lg:py-10 ">
@@ -31,6 +47,10 @@ export default async function BlogPage() {
       ) : (
         <p>Nothing to see here yet</p>
       )}
+      <QueryPagination
+        className="justify-center mt-4"
+        totalPages={totalPages}
+      />
     </div>
   );
 }
