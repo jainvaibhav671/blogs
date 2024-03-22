@@ -48,7 +48,7 @@ export default async function BlogPage({ searchParams }: Props) {
         <p>Nothing to see here yet</p>
       )}
       <QueryPagination
-        className="justify-center mt-4"
+        className="justify-centerk mt-4"
         totalPages={totalPages}
       />
     </div>
