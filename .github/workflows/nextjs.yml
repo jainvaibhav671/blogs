@@ -101,7 +101,7 @@ jobs:
       - name: Create Velite Folder
         run: ${{ steps.detect-package-manager.outputs.runner }} velite build
       - name: Build with Next.js
-        run: ${{ steps.detect-package-manager.outputs.manager }} build
+        run: ${{ steps.detect-package-manager.outputs.manager }} build && ls .
       # - name: Static HTML export with Next.js
       #   run: ${{ steps.detect-package-manager.outputs.runner }} next export
       - name: Upload artifact
