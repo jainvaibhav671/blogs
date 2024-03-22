@@ -1,4 +1,8 @@
 import { defineConfig, defineCollection, s } from "velite";
+import rehypeSlug from "rehype-slug";
+import rehypeSanitize from "rehype-sanitize";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
 
 const computedFields = <T extends { slug: string }>(data: T) => ({
   ...data,
@@ -27,12 +31,25 @@ export default defineConfig({
     assets: "public/static",
     base: "/static/",
     name: "[name]-[hash:6].[ext]",
-    clean: true
+    clean: true,
   },
   collections: { posts },
   mdx: {
-    rehypePlugins: [],
-    remarkPlugins: []
-  }
-
-})
+    rehypePlugins: [
+      rehypeSlug,
+      rehypeSanitize,
+      [rehypePrettyCode, { theme: "github-dark" }],
+      [
+        rehypeAutolinkHeadings,
+        {
+          behaviour: "wrap",
+          properties: {
+            className: ["subheading-anchor"],
+            ariaLabel: "Link to section",
+          },
+        },
+      ],
+    ],
+    remarkPlugins: [],
+  },
+});

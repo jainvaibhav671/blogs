@@ -2,6 +2,7 @@ import { MakrdownComponent } from "@/components/MarkdownComponent";
 import { posts } from "../../../../.velite";
 import { notFound } from "next/navigation";
 import React from "react";
+import "@/styles/mdx.css";
 
 interface PageProps {
   params: {
