@@ -7,7 +7,7 @@ const nextConfig = {
     config.plugins.push(new VeliteWebpackPlugin());
     return config;
   },
-  output: "export",
+  // output: "export",
 };
 
 class VeliteWebpackPlugin {

@@ -5,6 +5,8 @@ import PostItem from "@/components/PostItem";
 import { sortPosts } from "@/lib/utils";
 import { QueryPagination } from "@/components/QueryPagination";
 
+export const dynamic = "force-dynamic";
+
 const POSTS_PER_PAGE = 5;
 
 interface Props {
