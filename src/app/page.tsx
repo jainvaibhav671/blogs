@@ -3,7 +3,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site";
 import { cn, sortPosts } from "@/lib/utils";
 import { posts } from "@site/content";
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -33,7 +32,7 @@ export default function Home() {
               href={siteConfig.links.github}
               className={cn(
                 buttonVariants({ size: "lg", variant: "outline" }),
-                "w-full sm:w-fit"
+                "w-full sm:w-fit",
               )}
             >
               Github
@@ -47,10 +46,7 @@ export default function Home() {
         </h2>
         <ul className="flex flex-col">
           {latestPosts.map((post) => (
-            <li
-              className="first:border-t first:border-border"
-              key={post.slug}
-            >
+            <li className="first:border-t first:border-border" key={post.slug}>
               <PostItem {...post} />
             </li>
           ))}
